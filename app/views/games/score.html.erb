@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Countdown score</h1>
+  </div>
+   <h2><strong><%= @result[:message].capitalize %></strong></h2>
+  <p>Your word: <%= params[:attempt] %></p>
+  <p>Score: <%= @result[:score] %> points</p>
+  <p>Time: <%= @result[:time] %> seconds</p>
+  <br>
+  <br>
+  <br>
+  <a href="/new">This was fun. Go again!</a>
+</div>

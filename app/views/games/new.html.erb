@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <h1>Countdown</h1>
+    <div class="container">
+      <div class="letterGrid">
+        <% @letters.each do |letter| %>
+          <p class="letter"><%= letter %></p>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="attemptForm">
+      <form action="/score" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :letters, @letters %>
+        <%= hidden_field_tag :start_time, Time.now.strftime('%s') %>
+        <input type="text" name="attempt" placeholder="  Hit me with your best shot!" class="inputForm">
+        <input type="submit" value="Play" class="btnForm">
+      </form>
+    </div>
+</div>
